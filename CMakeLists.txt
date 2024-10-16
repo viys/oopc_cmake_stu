@@ -19,3 +19,6 @@ add_executable(oopc ${SRC})
 
 # 将 myclass 库链接到可执行文件
 target_link_libraries(oopc PRIVATE animal_class)
+
+target_compile_definitions(oopc PRIVATE ENABLE_MACRO_ISOLATION)
+target_compile_definitions(animal_class PRIVATE ENABLE_MACRO_ISOLATION)
