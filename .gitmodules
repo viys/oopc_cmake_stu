@@ -1,0 +1,3 @@
+[submodule "animal_class"]
+	path = animal_class
+	url = https://github.com/viys/animal_class.git
