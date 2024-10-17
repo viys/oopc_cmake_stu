@@ -1,11 +1,18 @@
 #include "stdio.h"
 #include "animal.h"
+#include "money.h"
 
 ANIMAL *Cat = NULL;
 ANIMAL_IMPLEMENTS *cat = NULL;
 
 ANIMAL *Mouse = NULL;
 ANIMAL_IMPLEMENTS *mouse = NULL;
+
+MONEY* MoneyA = NULL;
+MONEY_IMPLEMENTS* moneyA = NULL;
+
+MONEY* MoneyB = NULL;
+MONEY_IMPLEMENTS* moneyB = NULL;
 
 int main(void)
 {
@@ -34,5 +41,28 @@ int main(void)
     mouse->get_name(mouse);
     mouse->get_age(mouse);
     mouse->show_sound(mouse);
+    
+    Money_Attribute attr3 = {
+        .amount = 10
+    };
 
+    Money_Attribute attr4 = {
+        .amount = 5
+    };
+
+    MoneyA = MONEY_CTOR();
+    MoneyA->init(MoneyA, &attr3);
+    moneyA = (MONEY_IMPLEMENTS*)MoneyA;
+
+    MoneyB = MONEY_CTOR();
+    MoneyB->init(MoneyB, &attr4);
+    moneyB = (MONEY_IMPLEMENTS*)MoneyB;
+
+    CLASS_LOG("MoneyA\n");
+    moneyA->get_amount(moneyA);
+    moneyA->comparison(moneyA, moneyB);
+
+    CLASS_LOG("MoneyB\n");
+    moneyB->get_amount(moneyB);
+    moneyA->comparison(moneyB, moneyA);
 }

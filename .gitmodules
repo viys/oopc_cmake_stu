@@ -1,3 +1,4 @@
 [submodule "animal_class"]
-	path = animal_class
+	path = class_lib
 	url = https://github.com/viys/animal_class.git
+	branch = advanced
