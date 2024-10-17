@@ -1,6 +1,7 @@
 #include "stdio.h"
 #include "animal.h"
 #include "money.h"
+#include "my_config.h"
 
 ANIMAL *Cat = NULL;
 ANIMAL_IMPLEMENTS *cat = NULL;
@@ -16,6 +17,8 @@ MONEY_IMPLEMENTS* moneyB = NULL;
 
 int main(void)
 {
+    printf("Version: %s\n", CONFIG_FIRMWARE_VERSION);
+
     Animal_Attribute attr1 = {
         .name = "cat",
         .age = 4,
