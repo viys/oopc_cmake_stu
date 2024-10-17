@@ -1,0 +1,31 @@
+mainmenu "project setting"
+
+config FIRMWARE_VERSION
+    string "设置固件版本号"
+    default "H00-x.x.x"
+
+menu "固件配置"
+
+menuconfig DEBUG
+    bool "启用系统日志"
+    default n
+    help
+        Will print debug information
+
+config DEBUG_COLOR_MODE
+    bool "开启日志颜色"
+    default y
+    depends on DEBUG
+    help
+      Enable this option to colorize logs for easier reading.
+
+config DEBUG_LEVEL
+    hex "日志等级"
+    default 0x04
+    range 0x00 0x04
+    depends on DEBUG
+    help
+      Enable this option to print verbose debugging information.
+
+
+endmenu
